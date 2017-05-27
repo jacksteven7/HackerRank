@@ -1,0 +1,39 @@
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+    	 Scanner in = new Scanner(System.in);
+         int n = in.nextInt(),x,y,c,lastAns = 0,seq,q;
+         List<List<Integer>> seqList = new ArrayList<List<Integer>>(n);
+         for(int i = 0; i < n; i++)  {
+        	 seqList.add(new ArrayList<Integer>());
+         }
+         q = in.nextInt();
+         for(int i=0; i < q; i++){
+         	c = in.nextInt();
+         	x = in.nextInt();
+         	y = in.nextInt();
+         	seq = (x^lastAns)%n;
+         	if(c==1){
+         		seqList.get(seq).add(y);
+         	}else{
+         		lastAns = seqList.get(seq).get(y % seqList.get(seq).size());
+         		System.out.println(lastAns);
+         	}
+         }
+    }
+    /**
+     * 
+2 5
+1 0 5
+1 1 7
+1 0 3
+2 1 0
+2 1 1
+https://www.hackerrank.com/challenges/dynamic-array
+     */
+}
+
+
