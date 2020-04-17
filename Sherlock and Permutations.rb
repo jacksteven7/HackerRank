@@ -23,11 +23,10 @@ t.times do |t_itr|
 
     p result
 end
+
+
 =begin
-  
 2
 1 1
 2 3
-
-  
 =end
